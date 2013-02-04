@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Demo</title>
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link href='http://fonts.googleapis.com/css?family=Wendy+One' rel='stylesheet' type='text/css'>
+		<!-- font-family: 'Wendy One', sans-serif; -->
+		<script src="js/class.js"></script>
+		<script src="js/Box2dWeb-2.1.a.3.js"></script>
+		<script src="components/soundmanager/script/soundmanager2.js"></script>
+		<script>
+			/* setup globals */
+
+			// soundManager2
+			soundManager.setup({
+			  url: 'components/soundmanager/swf/',
+			  flashVersion: 9,
+			  debugFlash: false,
+			  debugMode: false
+			});
+
+			// box2d
+			b2Vec2 = Box2D.Common.Math.b2Vec2;
+			b2BodyDef = Box2D.Dynamics.b2BodyDef;
+			b2Body = Box2D.Dynamics.b2Body;
+			b2FixtureDef = Box2D.Dynamics.b2FixtureDef;
+			b2Fixture = Box2D.Dynamics.b2Fixture;
+			b2World = Box2D.Dynamics.b2World;
+			b2MassData = Box2D.Collision.Shapes.b2MassData;
+			b2PolygonShape = Box2D.Collision.Shapes.b2PolygonShape;
+			b2CircleShape = Box2D.Collision.Shapes.b2CircleShape;
+			b2DebugDraw = Box2D.Dynamics.b2DebugDraw;
+
+			if(typeof console === "undefined") {
+			  console = { log: function() { } };
+			}
+		</script>
+	</head>
+	<body>
+		<div id="game">
+			<canvas id="surface" width="512" height="256"></canvas>
+		</div>
+
+		<script data-main="js/app" src="components/requirejs/require.js"></script>
+	</body>
+</html>
